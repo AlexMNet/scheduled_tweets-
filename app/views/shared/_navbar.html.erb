@@ -12,7 +12,20 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Sign-Up", sign_up_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Logout", logout_path, method: :delete %>
+        </li>
       </ul>
-    </div>
+    </ul>
   </div>
+</div>
 </nav>
+
+<%# 
+Its more symantically correct to use a button_to instead of link_to for delete methods as opposed to using a link.
+The button becomes wrapped in a form that has a special value of delete
+Look into Hotwire for more advanced features! 
+ %>
