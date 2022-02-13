@@ -12,5 +12,14 @@ Rails.application.routes.draw do
   
   delete "logout", to: 'sessions#destroy'
 
+  # Fogot my password routes
+  get "password/reset", to: "password_resets#new"
+  post "password/reset", to: "password_resets#create"
+
+  # Reset password routes
+  get "password/reset/edit", to: "password_resets#edit"
+  patch "password/reset/edit", to: "password_resets#update"
+
+
   root to: "main#index"
 end
