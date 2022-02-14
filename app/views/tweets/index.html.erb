@@ -9,3 +9,14 @@
 <% if Current.user.twitter_accounts.none? %>
   <%= link_to "Connect a Twitter account", "/auth/twitter", method: :post, class: "btn btn-primary" %>
 <% end %>
+
+<%# see 1 %>
+<%= render @tweets %>
+
+<%# 
+1. Resources are lazy loaded so they will not show unless rendered.
+cool thing is you can render the resource, render @tweets and you can display the resource
+by creatin a partial in the tweets view dir with the same name _tweets.html.erb 
+This way you don't have to loop to render all the resources!!!! 
+*Note in the partial the variable will be tweet not @tweets or @tweet!!!!!
+ %>
