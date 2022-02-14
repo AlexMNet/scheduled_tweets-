@@ -6,6 +6,7 @@
 # password_confirmation: string virtual
 class User < ApplicationRecord
   has_many :twitter_accounts
+  has_many :tweets
   # virtual that creats hashed password and saves that in the database
   has_secure_password
 

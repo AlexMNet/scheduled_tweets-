@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < ApplicationController
   def twitter
-    Rails.logger.debug auth
+    # Rails.logger.debug auth
     # user ID will automatically be set since the user and twitter_accounts models are connected by i.e belongs_to, has_many
     # See if twitter_account exists if not initialize it.
     twitter_account = Current.user.twitter_accounts.where(username: auth.info.nickname).first_or_initialize
